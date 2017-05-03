@@ -16,7 +16,7 @@
     float distance;
 }
 
-@synthesize delegate;
+@synthesize delegate,lineWidth;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     
@@ -48,6 +48,19 @@
     
 }
 
+
+- (NSNumber *) lineWidth {
+    return lineWidth;
+}
+
+- (void) setLineWidth: (NSNumber*) width {
+    
+    if ([width integerValue] <= 0) {
+        width = @1;
+    }
+    lineWidth = width;
+    [path setLineWidth: [lineWidth integerValue]];
+}
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
