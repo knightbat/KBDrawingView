@@ -22,11 +22,8 @@
     
     if (self = [super initWithCoder:aDecoder]) {
         
-        [self setMultipleTouchEnabled:NO];
-        [self setBackgroundColor:[UIColor whiteColor]];
-        path = [UIBezierPath bezierPath];
-        [path setLineWidth:2.0];
-    }
+        [self setupLine];
+     }
     return self;
     
 }
@@ -34,11 +31,21 @@
     
     self = [super initWithFrame:frame];
     if (self) {
-        [self setMultipleTouchEnabled:NO];
-        path = [UIBezierPath bezierPath];
-        [path setLineWidth:2.0];
+        
+        [self setupLine];
     }
     return self;
+}
+
+
+- (void) setupLine {
+    
+    [self setMultipleTouchEnabled:NO];
+    [self setBackgroundColor:[UIColor whiteColor]];
+    self.lineColor = [UIColor blackColor];
+    path = [UIBezierPath bezierPath];
+    [path setLineWidth:2.0];
+    
 }
 
 
@@ -47,7 +54,11 @@
 - (void)drawRect:(CGRect)rect {
     
     [incrementalImage drawInRect:rect];
+    UIColor *strokeColor = self.lineColor;
+    [strokeColor setStroke];
     [path stroke];
+    
+    
 }
 
 
@@ -73,12 +84,12 @@
        
         if (self.minimumDrawLength && distance > [self.minimumDrawLength floatValue]) {
             isValid = YES;
-            [delegate enableButton];
+            [delegate finishedDrawingMinimumLength];
             
         } else if (distance > 150) {
             
             isValid = YES;
-            [delegate enableButton];
+            [delegate finishedDrawingMinimumLength];
         }
     }
     ctr++;
@@ -123,7 +134,7 @@
         [rectpath fill];
     }
     [incrementalImage drawAtPoint:CGPointZero];
-    [[UIColor blackColor] setStroke];
+    [self.lineColor setStroke];
     [path stroke];
     incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

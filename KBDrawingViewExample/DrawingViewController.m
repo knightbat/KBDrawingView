@@ -24,6 +24,7 @@
     self.renderButton.enabled = NO;
     self.drawingView.delegate = self;
     self.drawingView.minimumDrawLength = [NSNumber numberWithFloat:10.10];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +44,8 @@
     
     [self.drawingView clear];
     self.renderButton.enabled = NO;
-    
+    self.drawingView.lineColor = [UIColor grayColor];
+    self.drawingView.lineWidth = @10;
 }
 
 
@@ -61,7 +63,7 @@
      
  }
 
-- (void)enableButton {
+- (void)finishedDrawingMinimumLength {
     
     self.renderButton.enabled = YES;
 }

@@ -13,6 +13,8 @@
 
 @property (nonatomic, weak) id<KBDrawingViewDelegate> delegate;
 @property (nonatomic, strong) NSNumber *minimumDrawLength;
+@property (nonatomic, strong) UIColor *lineColor;
+@property (nonatomic, strong) NSNumber *lineWidth;
 
 
 - (UIImage *) renderImage;
@@ -22,6 +24,6 @@
 
 @protocol KBDrawingViewDelegate <NSObject>
 
-- (void) enableButton;
+- (void) finishedDrawingMinimumLength;
 
 @end
