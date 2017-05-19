@@ -1,10 +1,28 @@
 //
-//  LinearInterpView.m
-//  Turboviz
+//     KBDrawingView.m
 //
-//  Created by JK on 26/08/16.
-//  Copyright © 2016 jk. All rights reserved.
+//     MIT License
 //
+//     Copyright (c) 2017 Jayakrishnan M
+//
+//     Permission is hereby granted, free of charge,to any person obtaining a copy of
+//     this software and associated documentation files (the "Software"), to deal in
+//     the Software without restriction, including without limitation the rights to
+//     use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+//     the Software, and to permit persons to whom the Software is furnished to do so,
+//     subject to the following conditions:
+//
+//     The above copyright notice and this permission notice shall be included in all
+//     copies or substantial portions of the Software.
+//
+//     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+//     FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+//     COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+//     IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+//     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+
 
 #import "KBDrawingView.h"
 
@@ -18,16 +36,13 @@
     float distance;
 }
 
-@synthesize delegate;
+@synthesize delegate,lineWidth;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     
     if (self = [super initWithCoder:aDecoder]) {
         
-        [self setMultipleTouchEnabled:NO];
-        [self setBackgroundColor:[UIColor whiteColor]];
-        path = [UIBezierPath bezierPath];
-        [path setLineWidth:2.0];
+        [self setupLine];
     }
     return self;
     
@@ -36,20 +51,47 @@
     
     self = [super initWithFrame:frame];
     if (self) {
-        [self setMultipleTouchEnabled:NO];
-        path = [UIBezierPath bezierPath];
-        [path setLineWidth:2.0];
+        
+        [self setupLine];
     }
     return self;
 }
 
+
+- (void) setupLine {
+    
+    [self setMultipleTouchEnabled:NO];
+    [self setBackgroundColor:[UIColor whiteColor]];
+    self.lineColor = [UIColor blackColor];
+    path = [UIBezierPath bezierPath];
+    [path setLineWidth:2.0];
+    
+}
+
+
+- (NSNumber *) lineWidth {
+    return lineWidth;
+}
+
+- (void) setLineWidth: (NSNumber*) width {
+    
+    if ([width integerValue] <= 0) {
+        width = @1;
+    }
+    lineWidth = width;
+    [path setLineWidth: [lineWidth integerValue]];
+}
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     
     [incrementalImage drawInRect:rect];
+    UIColor *strokeColor = self.lineColor;
+    [strokeColor setStroke];
     [path stroke];
+    
+    
 }
 
 
@@ -66,21 +108,21 @@
     
     UITouch *touch = [touches anyObject];
     CGPoint p = [touch locationInView:self];
-
+    
     if (!isValid) {
         
         distance += [self distanceFromPoint:prevPoint ToPoint:p];
         NSLog(@"%f",distance);
         prevPoint = p;
-       
+        
         if (self.minimumDrawLength && distance > [self.minimumDrawLength floatValue]) {
             isValid = YES;
-            [delegate enableButton];
+            [delegate finishedDrawingMinimumLength];
             
         } else if (distance > 150) {
             
             isValid = YES;
-            [delegate enableButton];
+            [delegate finishedDrawingMinimumLength];
         }
     }
     ctr++;
@@ -119,13 +161,13 @@
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0.0);
     
     if (!incrementalImage) { // first time; paint background white
-    
+        
         UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
         [[UIColor whiteColor] setFill];
         [rectpath fill];
     }
     [incrementalImage drawAtPoint:CGPointZero];
-    [[UIColor blackColor] setStroke];
+    [self.lineColor setStroke];
     [path stroke];
     incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -146,7 +188,7 @@
 }
 
 - (void) clear {
-
+    
     isValid = NO;
     incrementalImage = nil;
     [self drawBitmap];
@@ -160,4 +202,5 @@
     CGFloat yDist = (p2.y - p1.y);
     return sqrt((xDist * xDist) + (yDist * yDist));
 }
+
 @end
