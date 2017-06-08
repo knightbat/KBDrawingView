@@ -36,7 +36,7 @@
     float distance;
 }
 
-@synthesize delegate,lineWidth;
+@synthesize delegate,lineWidth,lineColor;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     
@@ -80,6 +80,15 @@
     }
     lineWidth = width;
     [path setLineWidth: [lineWidth integerValue]];
+}
+
+- (UIColor *) lineColor {
+    return lineColor;
+}
+
+- (void) setLineColor: (UIColor*) color {
+    
+    lineColor = color;
 }
 
 // Only override drawRect: if you perform custom drawing.
@@ -160,10 +169,10 @@
     
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0.0);
     
-    if (!incrementalImage) { // first time; paint background white
+    if (!incrementalImage) { // first time; paint background to view's background color
         
         UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
-        [[UIColor whiteColor] setFill];
+        [self.backgroundColor setFill];
         [rectpath fill];
     }
     [incrementalImage drawAtPoint:CGPointZero];
