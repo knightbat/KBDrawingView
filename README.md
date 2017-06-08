@@ -21,6 +21,13 @@ pod 'KBDrawingView'
     self.drawingView = [KBDrawingView alloc] init];
     self.drawingView.delegate = self;
 ```
+* Configuration
+
+``` objective-c
+   self.drawingView.lineColor = [UIColor grayColor];
+   self.drawingView.lineWidth = @4;
+   self.drawingView.minimumDrawLength = @10;
+```
 * Getting output image 
 
 ``` objective-c
