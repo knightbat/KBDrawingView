@@ -21,10 +21,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+
     self.renderButton.enabled = NO;
     self.drawingView.delegate = self;
     self.drawingView.minimumDrawLength = [NSNumber numberWithFloat:10.10];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,7 +39,7 @@
 
 - (IBAction)renderButtonPressed:(id)sender {
     
-   rendredImage = [self.drawingView renderImage];
+    rendredImage = [self.drawingView renderImage];
     [self performSegueWithIdentifier:@"show" sender:self];
 }
 
@@ -49,19 +52,30 @@
 }
 
 
+#pragma mark SettingViewController Delegates
 
+- (void)setLineColor:(UIColor *)color {
+    self.drawingView.lineColor = color;
+}
+- (void)setLineWidth:(NSNumber *)width {
+    self.drawingView.lineWidth =width;
+}
 
- #pragma mark - Navigation
- 
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+#pragma mark - Navigation
 
-     if ([segue.identifier isEqualToString:@"show"]) {
-         
-         RenderViewController *vc =   segue.destinationViewController;
-         vc.renderedImage = rendredImage;
-     }
-     
- }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"show"]) {
+        
+        RenderViewController *vc =   segue.destinationViewController;
+        vc.renderedImage = rendredImage;
+    } else if ([segue.identifier isEqualToString:@"settings"]) {
+        SettingsViewController *vc = segue.destinationViewController;
+        vc.backGndColor=self.view.backgroundColor;
+        vc.delegate = self;
+    }
+    
+}
 
 - (void)finishedDrawingMinimumLength {
     
