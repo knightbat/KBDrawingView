@@ -8,8 +8,9 @@
 #import <UIKit/UIKit.h>
 #import "KBDrawingView.h"
 #import "RenderViewController.h"
+#import "SettingsViewController.h"
 
-@interface DrawingViewController : UIViewController <KBDrawingViewDelegate>
+@interface DrawingViewController : UIViewController <KBDrawingViewDelegate,SettingsViewControllerDelegate>
 
 @end
 
