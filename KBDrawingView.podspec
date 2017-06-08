@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "KBDrawingView"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "A Simple Drawing view in objC."
   s.platform     = :ios, "8.0"
   s.homepage     = "https://github.com/knightbat/KBDrawingView"
