@@ -173,8 +173,6 @@
     UIGraphicsEndImageContext();
 }
 
-
-
 - (UIImage *) renderImage {
     
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, 0.0);

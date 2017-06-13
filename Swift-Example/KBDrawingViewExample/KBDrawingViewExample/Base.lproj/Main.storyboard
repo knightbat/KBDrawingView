@@ -29,7 +29,8 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="3TZ-YX-3iZ"/>
                                         </constraints>
-                                        <state key="normal" title="Clear">
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="CLEAR">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -37,7 +38,7 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
+                                                <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -52,7 +53,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="BAQ-NT-BLt"/>
                                         </constraints>
-                                        <state key="normal" title="Render">
+                                        <state key="normal" title="RENDER">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -60,7 +61,7 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
+                                                <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -71,7 +72,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.21891622340425532" green="0.21891622340425532" blue="0.21891622340425532" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.19358377659574466" green="0.19358377659574466" blue="0.19358377659574466" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="7Z3-Cd-cuU"/>
                                     <constraint firstItem="TBH-N9-A2M" firstAttribute="top" secondItem="FE6-Gt-rfu" secondAttribute="top" constant="10" id="QGX-KB-FuK"/>
@@ -140,6 +141,14 @@
                             <constraint firstItem="5bs-9i-uxr" firstAttribute="leading" secondItem="jfq-aG-tiR" secondAttribute="leading" id="oUH-uT-kzt"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="T6y-wJ-kGo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Xbd-ur-cjq">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="saveBtnClicked:" destination="sW3-fu-aMa" id="Q1g-8g-2Yn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="showImage" destination="5bs-9i-uxr" id="GMl-9o-Jpe"/>
                     </connections>
@@ -218,8 +227,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="314" height="40"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eu-sm-nRU">
-                                                            <rect key="frame" x="20" y="0.0" width="294" height="40"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eu-sm-nRU">
+                                                            <rect key="frame" x="0.0" y="0.0" width="314" height="40"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -229,7 +238,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="6Eu-sm-nRU" secondAttribute="bottom" id="0Wf-K1-5r6"/>
                                                         <constraint firstAttribute="trailing" secondItem="6Eu-sm-nRU" secondAttribute="trailing" id="5sp-5r-t1D"/>
                                                         <constraint firstItem="6Eu-sm-nRU" firstAttribute="top" secondItem="Nxv-cg-BJ1" secondAttribute="top" id="fHj-2G-6Jn"/>
-                                                        <constraint firstItem="6Eu-sm-nRU" firstAttribute="leading" secondItem="Nxv-cg-BJ1" secondAttribute="leading" constant="20" id="uP1-Hg-Evz"/>
+                                                        <constraint firstItem="6Eu-sm-nRU" firstAttribute="leading" secondItem="Nxv-cg-BJ1" secondAttribute="leading" id="z8u-rK-pIY"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>

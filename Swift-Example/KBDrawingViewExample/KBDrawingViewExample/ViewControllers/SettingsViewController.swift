@@ -14,6 +14,7 @@ protocol SettingsViewControllerDelegate {
 }
 class SettingsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet var tableViewHeight: NSLayoutConstraint!
     @IBOutlet var listTableView: UITableView!
     @IBOutlet var popupView: UIView!
     var delegate :SettingsViewControllerDelegate!
@@ -39,8 +40,12 @@ class SettingsViewController: UIViewController,UITableViewDelegate,UITableViewDa
                       ["color_name":"CYAN","color":UIColor.cyan],
                       ["color_name":"MAGENTA","color":UIColor.magenta],
                       ["color_name":"ORANGE","color":UIColor.orange],
-                      ["color_name":"PURPLE","color":UIColor.purple]]
+                      ["color_name":"PURPLE","color":UIColor.purple],
+                      ["color_name":"YELLOW","color":UIColor.yellow]]
+        
         widthArray = ["1","2","3","4","5","6","7","8","9","10"]
+        
+       
     }
     // MARK: - TableView Delegates and Datasources
     
@@ -78,7 +83,7 @@ class SettingsViewController: UIViewController,UITableViewDelegate,UITableViewDa
             print(dict["color"] as Any)
             delegate.setLineColor(color: dict["color"] as Any as! UIColor)
         } else {
-           let width = Int(widthArray[indexPath.row] as! String)
+            let width = Int(widthArray[indexPath.row] as! String)
             
             delegate.setLineWidth(width:NSNumber(value:width!))
         }
@@ -86,7 +91,7 @@ class SettingsViewController: UIViewController,UITableViewDelegate,UITableViewDa
         self.navigationController?.popViewController(animated: true)
     }
     
-     // MARK: - UIButton Actions
+    // MARK: - UIButton Actions
     
     @IBAction func closeBtnClicked(_ sender: UIButton) {
         

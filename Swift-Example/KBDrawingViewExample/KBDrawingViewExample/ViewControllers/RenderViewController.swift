@@ -19,13 +19,32 @@ class RenderViewController: UIViewController {
         showImage.image = rendredImage;
 
     }
-
+  // MARK: - UIButton actions
+    
+    @IBAction func saveBtnClicked(_ sender: UIBarButtonItem) {
+        
+        UIImageWriteToSavedPhotosAlbum(showImage.image!, self,#selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    //MARK: - Add image to Library
+    func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "Image has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                self.navigationController?.popViewController(animated: true)
+            }))
+            present(ac, animated: true)
+        }
+    }
     /*
     // MARK: - Navigation
 

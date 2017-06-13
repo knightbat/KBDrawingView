@@ -19,7 +19,7 @@ class DrawingViewController: UIViewController,SettingsViewControllerDelegate,KBD
         
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.tintColor = UIColor.black
-        self.renderButton.isEnabled = false
+        setRenderButtonDisabled()
         self.drawingView.delegate = self
         self.drawingView.minimumDrawLength = NSNumber(floatLiteral: 10.10)
     }
@@ -49,16 +49,29 @@ class DrawingViewController: UIViewController,SettingsViewControllerDelegate,KBD
     
     @IBAction func clearButtonPressed(_ sender: UIButton) {
         self.drawingView.clear()
-        self.renderButton.isEnabled = false
+        setRenderButtonDisabled()
         self.drawingView.lineColor = UIColor.black
         self.drawingView.lineWidth = 1
     }
     // MARK: - KBDrawingViewDelegate
     func finishedDrawingMinimumLength() {
-        self.renderButton.isEnabled = true
+        setRenderButtonEnabled()
         
     }
     
+    // MARK: - Other Methods
+    
+    func setRenderButtonEnabled() {
+        renderButton.isEnabled = true
+        renderButton.isHidden = false
+    }
+    
+    func setRenderButtonDisabled() {
+        
+        renderButton.isEnabled = false
+        renderButton.isHidden = true
+        
+    }
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
