@@ -47,8 +47,8 @@
     
     [self.drawingView clear];
     self.renderButton.enabled = NO;
-    self.drawingView.lineColor = [UIColor grayColor];
-    self.drawingView.lineWidth = @4;
+    self.drawingView.lineColor = [UIColor blackColor];
+    self.drawingView.lineWidth = @1;
 }
 
 

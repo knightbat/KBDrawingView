@@ -13,8 +13,8 @@
 		D025E54D1D7E93BB00BFD748 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D025E54B1D7E93BB00BFD748 /* Main.storyboard */; };
 		D025E54F1D7E93BB00BFD748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D025E54E1D7E93BB00BFD748 /* Assets.xcassets */; };
 		D025E5521D7E93BB00BFD748 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D025E5501D7E93BB00BFD748 /* LaunchScreen.storyboard */; };
-		D0CEF5DB1ECF02B000333840 /* KBDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CEF5DA1ECF02B000333840 /* KBDrawingView.m */; };
 		D0E5D8E61D7E968000F0E2A5 /* RenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E5D8E51D7E968000F0E2A5 /* RenderViewController.m */; };
+		F4B308B91EEFABB900AC01BE /* KBDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B308B81EEFABB900AC01BE /* KBDrawingView.m */; };
 		F4C27EE21EE92126008262FB /* CALayer+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C27EE11EE92126008262FB /* CALayer+UIColor.m */; };
 		F4C27EE51EE92190008262FB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C27EE41EE92190008262FB /* SettingsViewController.m */; };
 		F4C27EE91EE92449008262FB /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C27EE81EE92449008262FB /* ListTableViewCell.m */; };
@@ -31,10 +31,10 @@
 		D025E54E1D7E93BB00BFD748 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D025E5511D7E93BB00BFD748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D025E5531D7E93BB00BFD748 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0CEF5D91ECF02B000333840 /* KBDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBDrawingView.h; sourceTree = "<group>"; };
-		D0CEF5DA1ECF02B000333840 /* KBDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBDrawingView.m; sourceTree = "<group>"; };
 		D0E5D8E41D7E968000F0E2A5 /* RenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderViewController.h; sourceTree = "<group>"; };
 		D0E5D8E51D7E968000F0E2A5 /* RenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderViewController.m; sourceTree = "<group>"; };
+		F4B308B71EEFABB900AC01BE /* KBDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBDrawingView.h; sourceTree = "<group>"; };
+		F4B308B81EEFABB900AC01BE /* KBDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBDrawingView.m; sourceTree = "<group>"; };
 		F4C27EE01EE92126008262FB /* CALayer+UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+UIColor.h"; sourceTree = "<group>"; };
 		F4C27EE11EE92126008262FB /* CALayer+UIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+UIColor.m"; sourceTree = "<group>"; };
 		F4C27EE31EE92190008262FB /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 				D025E5461D7E93BB00BFD748 /* AppDelegate.m */,
 				F4C27EE61EE9242F008262FB /* TableViewCells */,
 				F4C27EDF1EE92118008262FB /* Helper Class */,
-				D0CEF5D81ECF02B000333840 /* KBDrawingView */,
+				F4B308B61EEFABB900AC01BE /* KBDrawingView */,
 				D0E5D8E71D7E968D00F0E2A5 /* ViewControllers */,
 				D025E54B1D7E93BB00BFD748 /* Main.storyboard */,
 				D025E54E1D7E93BB00BFD748 /* Assets.xcassets */,
@@ -96,15 +96,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D0CEF5D81ECF02B000333840 /* KBDrawingView */ = {
-			isa = PBXGroup;
-			children = (
-				D0CEF5D91ECF02B000333840 /* KBDrawingView.h */,
-				D0CEF5DA1ECF02B000333840 /* KBDrawingView.m */,
-			);
-			path = KBDrawingView;
-			sourceTree = SOURCE_ROOT;
-		};
 		D0E5D8E71D7E968D00F0E2A5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +107,16 @@
 				F4C27EE41EE92190008262FB /* SettingsViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F4B308B61EEFABB900AC01BE /* KBDrawingView */ = {
+			isa = PBXGroup;
+			children = (
+				F4B308B71EEFABB900AC01BE /* KBDrawingView.h */,
+				F4B308B81EEFABB900AC01BE /* KBDrawingView.m */,
+			);
+			name = KBDrawingView;
+			path = ../../KBDrawingView;
 			sourceTree = "<group>";
 		};
 		F4C27EDF1EE92118008262FB /* Helper Class */ = {
@@ -210,9 +211,9 @@
 				D0E5D8E61D7E968000F0E2A5 /* RenderViewController.m in Sources */,
 				D025E5471D7E93BB00BFD748 /* AppDelegate.m in Sources */,
 				D025E5441D7E93BB00BFD748 /* main.m in Sources */,
-				D0CEF5DB1ECF02B000333840 /* KBDrawingView.m in Sources */,
 				F4C27EE91EE92449008262FB /* ListTableViewCell.m in Sources */,
 				F4C27EE21EE92126008262FB /* CALayer+UIColor.m in Sources */,
+				F4B308B91EEFABB900AC01BE /* KBDrawingView.m in Sources */,
 				F4C27EE51EE92190008262FB /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
