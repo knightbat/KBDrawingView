@@ -39,6 +39,7 @@
                   @{@"color_name":@"MAGENTA",@"color":UIColor.magentaColor},
                   @{@"color_name":@"ORANGE",@"color":UIColor.orangeColor},
                   @{@"color_name":@"PURPLE",@"color":UIColor.purpleColor},
+                  @{@"color_name":@"YELLOW",@"color":UIColor.yellowColor},
                   nil];
     
     widthArray = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10", nil];
