@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D07F49E21EF0F9D0007DC47E /* KBDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D07F49E11EF0F9D0007DC47E /* KBDrawingView.m */; };
 		F4B308E51EEFACE600AC01BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B308E41EEFACE600AC01BE /* AppDelegate.swift */; };
 		F4B308EA1EEFACE600AC01BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B308E81EEFACE600AC01BE /* Main.storyboard */; };
 		F4B308EC1EEFACE600AC01BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B308EB1EEFACE600AC01BE /* Assets.xcassets */; };
 		F4B308EF1EEFACE600AC01BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B308ED1EEFACE600AC01BE /* LaunchScreen.storyboard */; };
-		F4B308F91EEFAD3100AC01BE /* KBDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B308F81EEFAD3100AC01BE /* KBDrawingView.m */; };
 		F4B308FC1EEFAE9200AC01BE /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B308FB1EEFAE9200AC01BE /* DrawingViewController.swift */; };
 		F4B308FE1EEFAEB000AC01BE /* RenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B308FD1EEFAEB000AC01BE /* RenderViewController.swift */; };
 		F4B309001EEFAEC000AC01BE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B308FF1EEFAEC000AC01BE /* SettingsViewController.swift */; };
@@ -20,14 +20,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D07F49E01EF0F9D0007DC47E /* KBDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBDrawingView.h; path = KBDrawingView/KBDrawingView.h; sourceTree = "<group>"; };
+		D07F49E11EF0F9D0007DC47E /* KBDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBDrawingView.m; path = KBDrawingView/KBDrawingView.m; sourceTree = "<group>"; };
 		F4B308E11EEFACE600AC01BE /* KBDrawingViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KBDrawingViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B308E41EEFACE600AC01BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B308E91EEFACE600AC01BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4B308EB1EEFACE600AC01BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4B308EE1EEFACE600AC01BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4B308F01EEFACE600AC01BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4B308F71EEFAD3100AC01BE /* KBDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBDrawingView.h; sourceTree = "<group>"; };
-		F4B308F81EEFAD3100AC01BE /* KBDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBDrawingView.m; sourceTree = "<group>"; };
 		F4B308FB1EEFAE9200AC01BE /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		F4B308FD1EEFAEB000AC01BE /* RenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderViewController.swift; sourceTree = "<group>"; };
 		F4B308FF1EEFAEC000AC01BE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -83,8 +83,8 @@
 		F4B308F61EEFAD3100AC01BE /* KBDrawingView */ = {
 			isa = PBXGroup;
 			children = (
-				F4B308F71EEFAD3100AC01BE /* KBDrawingView.h */,
-				F4B308F81EEFAD3100AC01BE /* KBDrawingView.m */,
+				D07F49E01EF0F9D0007DC47E /* KBDrawingView.h */,
+				D07F49E11EF0F9D0007DC47E /* KBDrawingView.m */,
 			);
 			name = KBDrawingView;
 			path = ../../../KBDrawingView;
@@ -190,11 +190,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4B308FE1EEFAEB000AC01BE /* RenderViewController.swift in Sources */,
-				F4B308F91EEFAD3100AC01BE /* KBDrawingView.m in Sources */,
 				F4B308FC1EEFAE9200AC01BE /* DrawingViewController.swift in Sources */,
 				F4B309041EEFC4BE00AC01BE /* listTableViewCell.swift in Sources */,
 				F4B309001EEFAEC000AC01BE /* SettingsViewController.swift in Sources */,
 				F4B308E51EEFACE600AC01BE /* AppDelegate.swift in Sources */,
+				D07F49E21EF0F9D0007DC47E /* KBDrawingView.m in Sources */,
 				F4B309071EEFE2BD00AC01BE /* XMButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,7 +325,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xminds.KBDrawingViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/bindu/Documents/test/KBDrawingView/Swift-Example/KBDrawingViewExample/KBDrawingViewExample/KBDrawingViewExample-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KBDrawingViewExample/KBDrawingViewExample-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -339,7 +339,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xminds.KBDrawingViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/bindu/Documents/test/KBDrawingView/Swift-Example/KBDrawingViewExample/KBDrawingViewExample/KBDrawingViewExample-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KBDrawingViewExample/KBDrawingViewExample-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
